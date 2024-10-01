@@ -1,13 +1,14 @@
 package aplicacao;
 
-import tabuleiro.Campo;
-import tabuleiro.Posicao;
+
+import xadrez.PartidaXadrez;
 
 public class Programa {
 
 	public static void main(String[] args) {
 
-		Campo campo = new Campo(8, 8);
+		PartidaXadrez partida= new PartidaXadrez();
+		UI.printCampo(partida.getPecas());
 	}
 
 }
