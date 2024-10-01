@@ -36,4 +36,8 @@ public class Campo {
 		return pecas[posicao.getFileira()][posicao.getColuna()];
 	}
 	
+	public void campoPeca(Peca peca, Posicao posicao) {
+		pecas[posicao.getFileira()][posicao.getColuna()] = peca;
+		peca.posicao = posicao;
+	}
 }
