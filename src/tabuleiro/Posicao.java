@@ -3,11 +3,11 @@ package tabuleiro;
 public class Posicao {
 	
 	private int fileira;
-	private int coluna;
+	private int linha;
 	
-	public Posicao(int fileira, int coluna) {
+	public Posicao(int fileira, int linha) {
 		this.fileira = fileira;
-		this.coluna = coluna;
+		this.linha = linha;
 	}
 	
 	public int getFileira() {
@@ -16,16 +16,16 @@ public class Posicao {
 	public void setFileira(int fileira) {
 		this.fileira = fileira;
 	}
-	public int getColuna() {
-		return coluna;
+	public int getLinha() {
+		return linha;
 	}
-	public void setColuna(int coluna) {
-		this.coluna = coluna;
+	public void setLinha(int linha) {
+		this.linha = linha;
 	}
 	
 	@Override
 	public String toString() {
-		return fileira + " " + coluna;
+		return fileira + " " + linha;
 	}
 	
 }

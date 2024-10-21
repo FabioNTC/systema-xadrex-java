@@ -1,7 +1,6 @@
 package xadrez;
 
 import tabuleiro.Campo;
-import tabuleiro.Posicao;
 import xadrez.pecas.Rei;
 import xadrez.pecas.Torre;
 
@@ -15,18 +14,22 @@ public class PartidaXadrez {
 	}
 	
 	public PecaXadrez[][] getPecas (){
-		PecaXadrez[][] mat = new PecaXadrez[campo.getFileira()][campo.getColuna()];
+		PecaXadrez[][] mat = new PecaXadrez[campo.getFileira()][campo.getLinha()];
 		for (int i=0; i<campo.getFileira(); i++) {
-			for (int j=0; j<campo.getColuna(); j++) {
+			for (int j=0; j<campo.getLinha(); j++) {
 				mat[i][j] = (PecaXadrez) campo.peca(i, j);
 			}
 		}
 		return mat;
 	}
 	
+	private void placeNewPiece(char fileira, int linha, PecaXadrez peca) {
+		campo.campoPeca(peca, new PosicaoXadrez(fileira, linha).toPosicao());
+	}
+	
 	private void configInicial() {
-		campo.campoPeca(new Torre(campo, Cor.White), new Posicao (2, 1));
-		campo.campoPeca(new Rei(campo, Cor.Black), new Posicao (0, 4));
-		campo.campoPeca(new Rei(campo, Cor.White), new Posicao (7, 4));
+		placeNewPiece('b', 6, new Torre(campo, Cor.White));
+		placeNewPiece('e', 8, new Rei(campo, Cor.Black));
+		placeNewPiece('e', 1, new Rei(campo, Cor.White));
 	}
 }
